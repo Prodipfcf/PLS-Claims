@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="PLS Claims Management Services — claims administration, litigation management, reporting, and cost containment.">
+  <title>PLS Claims Management Services | Healthcare Professional Liability</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #173650;
+      --navy-deep: #10293e;
+      --accent: #477e87;
+      --gold: #bca05a;
+      --bg: #ffffff;
+      --alt: #f4f6f7;
+      --text: #1e2933;
+      --muted: #596773;
+      --line: #dce3e7;
+      --card: #ffffff;
+      --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+      --sans: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      --shadow: 0 18px 48px rgba(16, 41, 62, .12);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 400 16px/1.7 var(--sans); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    p { margin: 0; }
+    h1, h2, h3 { margin: 0; color: var(--navy); font-family: var(--serif); font-weight: 600; line-height: 1.16; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; border-radius: 3px; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin-inline: auto; }
+    section { padding: 86px 0; }
+    .eyebrow { margin-bottom: 15px; color: var(--accent); font: 700 .75rem/1.3 var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+    .section-title { max-width: 700px; font-size: clamp(2rem, 3.5vw, 2.8rem); }
+    .section-lead { max-width: 720px; margin-top: 18px; color: var(--muted); font-size: 1.05rem; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 49px; padding: 0 23px; border: 1.5px solid var(--navy); border-radius: 3px; cursor: pointer; font: 700 .9rem var(--sans); text-align: center; text-decoration: none; transition: background-color .2s, border-color .2s, color .2s, transform .2s; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--navy); color: #fff; }
+    .btn-primary:hover { background: var(--accent); border-color: var(--accent); }
+    .btn-secondary { background: transparent; color: var(--navy); }
+    .btn-secondary:hover { background: #fff; }
+
+    /* Header */
+    .site-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+    .header-row { display: flex; align-items: center; justify-content: space-between; min-height: 78px; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--navy); text-decoration: none; flex-shrink: 0; }
+    .brand-mark { display: grid; width: 46px; height: 46px; place-items: center; border-radius: 2px; background: var(--navy); color: #d7c181; font: 600 1rem var(--serif); letter-spacing: .055em; }
+    .brand-text strong { display: block; font: 600 1.02rem/1.2 var(--serif); }
+    .brand-text small { display: block; margin-top: 4px; color: var(--muted); font: 600 .62rem/1.2 var(--sans); letter-spacing: .17em; text-transform: uppercase; }
+    .site-nav ul { display: flex; align-items: center; gap: 30px; margin: 0; padding: 0; list-style: none; }
+    .site-nav a { display: inline-block; padding: 8px 0; border-bottom: 2px solid transparent; color: #263846; font-size: .9rem; font-weight: 600; text-decoration: none; }
+    .site-nav a:hover { border-bottom-color: var(--accent); }
+    .header-cta { flex-shrink: 0; }
+    .menu-toggle { display: none; width: 46px; height: 46px; border: 1px solid var(--line); border-radius: 3px; background: #fff; cursor: pointer; }
+    .menu-toggle span { display: block; width: 20px; height: 2px; margin: 5px auto; background: var(--navy); transition: transform .2s, opacity .2s; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Hero */
+    .hero { padding: 66px 0 72px; background: linear-gradient(115deg, #f4f6f7 0%, #fbfcfc 58%, #eef3f4 100%); border-bottom: 1px solid var(--line); }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 56px; align-items: center; }
+    .hero h1 { max-width: 670px; margin-bottom: 21px; font-size: clamp(2.45rem, 4.8vw, 4.05rem); letter-spacing: -.025em; }
+    .hero-copy { max-width: 620px; margin-bottom: 29px; color: #4d5b67; font-size: 1.08rem; line-height: 1.75; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-note { display: flex; align-items: center; gap: 10px; margin-top: 28px; color: var(--muted); font-size: .85rem; }
+    .hero-note::before { content: ""; width: 28px; height: 2px; background: var(--gold); }
+    .hero-visual { position: relative; min-width: 0; }
+    .hero-image { width: 100%; height: 430px; object-fit: cover; object-position: center; border-radius: 2px; background: #dce4e7; }
+    .visual-caption { position: absolute; right: -15px; bottom: 22px; width: min(290px, 82%); padding: 21px 24px; border-left: 3px solid var(--gold); background: #fff; box-shadow: var(--shadow); }
+    .visual-caption strong { display: block; margin-bottom: 5px; color: var(--navy); font: 600 1.15rem/1.3 var(--serif); }
+    .visual-caption span { color: var(--muted); font-size: .84rem; line-height: 1.5; }
+
+    /* Content sections */
+    .intro-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: start; }
+    .intro-copy { margin-top: 19px; color: var(--muted); font-size: 1.05rem; }
+    .capability-panel { padding: 27px 30px; border: 1px solid var(--line); border-top: 3px solid var(--accent); background: #fff; }
+    .capability-panel h3 { margin-bottom: 14px; font: 700 .78rem/1.3 var(--sans); letter-spacing: .13em; text-transform: uppercase; }
+    .capability-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; margin: 0; padding: 0; list-style: none; }
+    .capability-list li { position: relative; padding: 11px 0 11px 18px; border-top: 1px solid var(--line); color: #344451; font-size: .91rem; line-height: 1.5; }
+    .capability-list li::before { position: absolute; top: 20px; left: 0; width: 7px; height: 2px; background: var(--accent); content: ""; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 37px; }
+    .section-head .section-lead { max-width: 470px; margin-top: 0; }
+    .services-section { background: var(--alt); border-block: 1px solid var(--line); }
+    .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .service-card { min-height: 205px; padding: 25px 25px 27px; border: 1px solid #dfe5e8; border-top: 2px solid transparent; background: #fff; transition: border-color .2s, box-shadow .2s, transform .2s; }
+    .service-card:hover { transform: translateY(-2px); border-top-color: var(--accent); box-shadow: 0 14px 30px rgba(16,41,62,.08); }
+    .service-number { display: block; margin-bottom: 24px; color: var(--accent); font: 700 .76rem var(--sans); letter-spacing: .12em; }
+    .service-card h3 { margin-bottom: 10px; font-size: 1.22rem; line-height: 1.28; }
+    .service-card p { color: var(--muted); font-size: .9rem; line-height: 1.6; }
+
+    .why-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 70px; align-items: start; }
+    .why-intro { position: sticky; top: 120px; }
+    .why-intro p { margin-top: 18px; color: var(--muted); }
+    .reason { padding: 23px 0; border-top: 1px solid var(--line); }
+    .reason:last-child { border-bottom: 1px solid var(--line); }
+    .reason h3 { margin-bottom: 8px; font-size: 1.23rem; }
+    .reason p { color: var(--muted); font-size: .96rem; }
+
+    .cta-band { padding: 53px 0; background: var(--navy); color: #fff; }
+    .cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 28px; }
+    .cta-band h2 { max-width: 700px; color: #fff; font-size: clamp(1.7rem, 3vw, 2.35rem); }
+    .cta-band p { margin-top: 10px; color: #d5dfe6; font-size: .98rem; }
+    .cta-band .btn { border-color: #fff; background: #fff; color: var(--navy); }
+    .cta-band .btn:hover { border-color: #d7c181; background: #d7c181; }
+
+    .contact-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; align-items: start; }
+    .contact-intro p { margin-top: 18px; color: var(--muted); }
+    .contact-highlight { margin-top: 28px; padding-left: 18px; border-left: 2px solid var(--gold); color: var(--muted); font-size: .92rem; }
+    .contact-form { padding: 31px; border: 1px solid var(--line); background: #fff; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
+    .field { margin-bottom: 17px; }
+    label { display: block; margin-bottom: 7px; color: #263846; font: 700 .82rem var(--sans); }
+    input, select, textarea { display: block; width: 100%; min-height: 47px; padding: 11px 13px; border: 1px solid #cfd8dd; border-radius: 2px; background: #fff; color: var(--text); font: 400 .95rem var(--sans); }
+    textarea { min-height: 120px; resize: vertical; }
+    input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent); }
+    .error-message { display: none; margin-top: 5px; color: #a52525; font-size: .8rem; }
+    .field.invalid input, .field.invalid select, .field.invalid textarea { border-color: #a52525; }
+    .field.invalid .error-message { display: block; }
+    .prototype-note { margin-top: 12px; color: var(--muted); font-size: .78rem; }
+    .form-success { display: none; padding: 35px 5px; text-align: center; }
+    .form-success h3 { margin-bottom: 10px; font-size: 1.55rem; }
+    .form-success p { color: var(--muted); }
+
+    /* Footer */
+    .site-footer { padding: 57px 0 25px; background: #f4f6f7; border-top: 1px solid var(--line); }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr .7fr .9fr; gap: 50px; padding-bottom: 34px; border-bottom: 1px solid var(--line); }
+    .footer-brand-copy { max-width: 390px; margin: 17px 0 22px; color: var(--muted); font-size: .91rem; }
+    .site-footer h4 { margin: 0 0 15px; color: var(--accent); font: 700 .75rem var(--sans); letter-spacing: .13em; text-transform: uppercase; }
+    .site-footer ul { margin: 0; padding: 0; list-style: none; }
+    .site-footer li { margin-bottom: 8px; }
+    .site-footer li a { color: #3f4d58; font-size: .9rem; text-decoration: none; }
+    .site-footer li a:hover { text-decoration: underline; }
+    .copyright { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 20px; color: var(--muted); font-size: .78rem; }
+
+    @media (max-width: 1000px) {
+      .hero-grid { grid-template-columns: 1fr 1fr; gap: 34px; }
+      .hero-image { height: 390px; }
+      .intro-grid, .why-grid, .contact-grid { gap: 42px; }
+      .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .section-head { align-items: start; flex-direction: column; gap: 15px; }
+    }
+    @media (max-width: 860px) {
+      .header-cta { display: none; }
+      .menu-toggle { display: block; }
+      .site-nav { position: absolute; top: 100%; left: 0; right: 0; max-height: 0; overflow: hidden; background: #fff; transition: max-height .25s ease; }
+      .site-nav.open { max-height: 360px; border-bottom: 1px solid var(--line); }
+      .site-nav ul { display: block; padding: 7px 24px 18px; }
+      .site-nav a { display: block; padding: 13px 0; border-bottom: 1px solid var(--line); }
+      .hero-grid, .intro-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 34px; }
+      .hero-visual { max-width: 650px; }
+      .hero-image { height: 390px; }
+      .why-intro { position: static; }
+      .cta-inner { align-items: flex-start; flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 640px) {
+      section { padding: 61px 0; }
+      .wrap { width: min(1160px, calc(100% - 38px)); }
+      .header-row { min-height: 70px; gap: 12px; }
+      .brand-mark { width: 41px; height: 41px; }
+      .brand-text strong { font-size: .94rem; }
+      .brand-text small { font-size: .56rem; }
+      .hero { padding: 48px 0 55px; }
+      .hero h1 { font-size: clamp(2.25rem, 10vw, 3rem); }
+      .hero-copy { font-size: 1rem; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-actions .btn { width: 100%; }
+      .hero-image { height: 300px; }
+      .visual-caption { right: 10px; bottom: 12px; padding: 16px 18px; }
+      .capability-list, .service-grid, .form-row, .footer-grid { grid-template-columns: 1fr; }
+      .capability-panel, .contact-form { padding: 23px 20px; }
+      .service-card { min-height: 0; }
+      .service-number { margin-bottom: 15px; }
+      .footer-grid > div:first-child { grid-column: auto; }
+      .copyright { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="brand" href="#home" aria-label="PLS Claims Management Services home">
+        <span class="brand-mark" aria-hidden="true">PLS</span>
+        <span class="brand-text"><strong>Claims Management</strong><small>Services</small></span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary header-cta" href="#contact">Discuss Your Claims Needs</a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-content">
+          <div class="eyebrow">Medical Malpractice &amp; Professional Liability</div>
+          <h1 id="hero-title">Claims Management for Healthcare Professional Liability</h1>
+          <p class="hero-copy">PLS provides full-spectrum insurance claims management and administration, supported by experienced claims professionals and claims administration software. Its services include litigation management, defense strategy, reserve management, reporting, mediation and cost containment.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Discuss Your Claims Needs</a>
+            <a class="btn btn-secondary" href="#services">Explore Our Services</a>
+          </div>
+          <div class="hero-note">From initial report through resolution and final disposition</div>
+        </div>
+        <div class="hero-visual">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=85" alt="Business professionals meeting around a table to review information together" fetchpriority="high">
+          <div class="visual-caption"><strong>Professional claims oversight</strong><span>Support across claims administration, litigation activity and reporting requirements.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" id="about" aria-labelledby="about-title">
+      <div class="wrap intro-grid">
+        <div>
+          <div class="eyebrow">About PLS</div>
+          <h2 class="section-title" id="about-title">The right expertise to manage your claims</h2>
+          <p class="intro-copy">PLS provides full-spectrum insurance claims management and administration. Its claims professionals work proactively from initial report through resolution and final disposition, with support across litigation budgets, defense strategy, reserve management, reporting, mediation and expense management.</p>
+        </div>
+        <div class="capability-panel">
+          <h3>Areas of claims support</h3>
+          <ul class="capability-list">
+            <li>Litigation budgets</li>
+            <li>Defense strategy</li>
+            <li>Defense attorney activity and spending</li>
+            <li>Reserve-setting and management</li>
+            <li>Peer review panel hearing preparation</li>
+            <li>Medical records review</li>
+            <li>Expert retention</li>
+            <li>Expert witness summaries</li>
+            <li>Mediation negotiations and settlements</li>
+            <li>Reporting requirements and payments for professional liability claims</li>
+            <li>Loss runs</li>
+            <li>Expense management</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Services</div>
+            <h2 class="section-title" id="services-title">Claims management services</h2>
+          </div>
+          <p class="section-lead">Explore the claims administration and related support services identified by PLS.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card"><span class="service-number">01</span><h3>Claims Administration and Litigation Management</h3><p>Claims administration from initial report through resolution and final disposition, with attention to litigation budgets, defense strategy and defense counsel activity.</p></article>
+          <article class="service-card"><span class="service-number">02</span><h3>Risk Management</h3><p>PLS describes a proactive approach to identifying key defense-strategy elements early in a claim and pursuing early resolution where possible.</p></article>
+          <article class="service-card"><span class="service-number">03</span><h3>Claims Reports</h3><p>Claim reports, loss runs, and reporting requirements for professional liability claims.</p></article>
+          <article class="service-card"><span class="service-number">04</span><h3>State and Federal Reporting &amp; Compliance</h3><p>PLS handles applicable state and federal reporting requirements and releases.</p></article>
+          <article class="service-card"><span class="service-number">05</span><h3>Litigation Budgeting and Cost Containment</h3><p>Litigation budget management and review of defense counsel activity, spending and related fees throughout the life of a claim.</p></article>
+          <article class="service-card"><span class="service-number">06</span><h3>Mediation</h3><p>Mediation negotiations and settlements as part of claims and litigation management.</p></article>
+          <article class="service-card"><span class="service-number">07</span><h3>Private Claim Resolution and Mediation</h3><p>Private claim resolution and mediation, using the service terminology listed by PLS.</p></article>
+          <article class="service-card"><span class="service-number">08</span><h3>Trial Monitoring</h3><p>Trial monitoring as part of PLS's listed claims management services.</p></article>
+          <article class="service-card"><span class="service-number">09</span><h3>Audits</h3><p>Discuss audit requirements and scope with PLS.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why" aria-labelledby="why-title">
+      <div class="wrap why-grid">
+        <div class="why-intro">
+          <div class="eyebrow">Why PLS</div>
+          <h2 class="section-title" id="why-title">A focused approach to claims management</h2>
+          <p>The following points reflect the claims management approach described in the existing PLS content.</p>
+        </div>
+        <div class="reasons">
+          <article class="reason"><h3>Senior-level claims specialists</h3><p>Our claims specialists are senior-level experts in their field, with the experience to give each case due diligence and specialized attention.</p></article>
+          <article class="reason"><h3>Early resolution</h3><p>We work proactively to resolve claims early, before they escalate to litigation, by identifying key defense-strategy elements in the early stages wherever possible.</p></article>
+          <article class="reason"><h3>Litigated claims</h3><p>We have extensive experience managing litigated claims, including budgets and activity, and collaborating with defense counsel on mediation and litigation strategy.</p></article>
+          <article class="reason"><h3>Cost containment</h3><p>Costs and fees are carefully managed on each claim. We review and manage defense counsel and other fees throughout the life of a claim.</p></article>
+          <article class="reason"><h3>Reporting requirements</h3><p>We handle applicable state and federal reporting requirements and releases.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="wrap cta-inner">
+        <div><h2 id="cta-title">Discuss your claims management needs with PLS</h2><p>Use the contact form to share a little about your organization and inquiry.</p></div>
+        <a class="btn" href="#contact">Contact PLS</a>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div class="contact-intro">
+          <div class="eyebrow">Contact Us</div>
+          <h2 class="section-title" id="contact-title">Get in touch</h2>
+          <p>Send a few details about your organization and your inquiry.</p>
+          <div class="contact-highlight">This prototype does not publish a telephone number or email address because none was supplied for this concept.</div>
+        </div>
+        <div>
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="field"><label for="full-name">Full Name</label><input id="full-name" name="full-name" autocomplete="name" required><span class="error-message">Please enter your full name.</span></div>
+              <div class="field"><label for="business-email">Business Email</label><input id="business-email" name="business-email" type="email" autocomplete="email" required><span class="error-message">Please enter a valid email address.</span></div>
+            </div>
+            <div class="form-row">
+              <div class="field"><label for="organization">Company or Organization</label><input id="organization" name="organization" autocomplete="organization" required><span class="error-message">Please enter your organization.</span></div>
+              <div class="field"><label for="inquiry-type">Type of Inquiry</label><select id="inquiry-type" name="inquiry-type" required><option value="">Select an inquiry type</option><option>Claims administration and litigation management</option><option>Risk management</option><option>Claims reports</option><option>State and federal reporting and compliance</option><option>Litigation budgeting and cost containment</option><option>Mediation or private claim resolution</option><option>Trial monitoring or audits</option><option>Other</option></select><span class="error-message">Please choose an inquiry type.</span></div>
+            </div>
+            <div class="field"><label for="message">Message</label><textarea id="message" name="message" required></textarea><span class="error-message">Please enter a message.</span></div>
+            <button class="btn btn-primary" type="submit">Send Inquiry</button>
+            <p class="prototype-note">Design prototype only: the form does not submit, transmit, or store information.</p>
+          </form>
+          <div class="form-success" id="form-success" role="status" tabindex="-1"><h3>Thank you for your message</h3><p>This is a demonstration form; no information was sent.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="#home" aria-label="PLS Claims Management Services home"><span class="brand-mark" aria-hidden="true">PLS</span><span class="brand-text"><strong>Claims Management</strong><small>Services</small></span></a>
+          <p class="footer-brand-copy">Full-spectrum insurance claims management and administration with experienced claims professionals.</p>
+          <a class="btn btn-primary" href="#contact">Contact PLS</a>
+        </div>
+        <div><h4>Explore</h4><ul><li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li><li><a href="#contact">Contact Us</a></li></ul></div>
+        <div><h4>Services</h4><ul><li><a href="#services">Claims Administration</a></li><li><a href="#services">Risk Management</a></li><li><a href="#services">Reporting &amp; Compliance</a></li><li><a href="#services">Mediation</a></li><li><a href="#services">Trial Monitoring &amp; Audits</a></li></ul></div>
+      </div>
+      <div class="copyright"><span>© <span id="copyright-year">2026</span> PLS Claims Management Services. All rights reserved.</span><span>Homepage design concept</span></div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const nav = document.getElementById('site-nav');
+      const menuButton = document.getElementById('menu-toggle');
+      const form = document.getElementById('contact-form');
+      const success = document.getElementById('form-success');
+
+      function closeMenu() {
+        nav.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation menu');
+      }
+
+      menuButton.addEventListener('click', function () {
+        const isOpen = nav.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(isOpen));
+        menuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      });
+
+      nav.addEventListener('click', function (event) {
+        if (event.target.closest('a')) closeMenu();
+      });
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') closeMenu();
+      });
+
+      document.getElementById('copyright-year').textContent = new Date().getFullYear();
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        let isValid = true;
+        let firstInvalid = null;
+
+        form.querySelectorAll('.field').forEach(function (field) {
+          const input = field.querySelector('input, select, textarea');
+          const value = input.value.trim();
+          let fieldIsValid = value.length > 0;
+
+          if (input.type === 'email') {
+            fieldIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+          }
+
+          field.classList.toggle('invalid', !fieldIsValid);
+          input.setAttribute('aria-invalid', String(!fieldIsValid));
+          if (!fieldIsValid) {
+            isValid = false;
+            if (!firstInvalid) firstInvalid = input;
+          }
+        });
+
+        if (!isValid) {
+          firstInvalid.focus();
+          return;
+        }
+
+        form.hidden = true;
+        success.style.display = 'block';
+        success.focus();
+      });
+
+      form.querySelectorAll('input, select, textarea').forEach(function (input) {
+        input.addEventListener('input', function () {
+          const field = input.closest('.field');
+          if (field) {
+            field.classList.remove('invalid');
+            input.setAttribute('aria-invalid', 'false');
+          }
+        });
+        input.addEventListener('change', function () {
+          const field = input.closest('.field');
+          if (field) {
+            field.classList.remove('invalid');
+            input.setAttribute('aria-invalid', 'false');
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
